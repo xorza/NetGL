@@ -1,0 +1,20 @@
+#version 150 core
+
+//NetGL-GlobalUniforms
+//NetGL-StandartUniforms
+
+in vec4 in_Position;
+in vec3 in_Normal;
+in vec2 in_TexCoord;
+
+out vec3 vertPosition;
+out vec3 vertNormal;
+out vec2 vertTexCoord;
+
+void main() {
+	gl_Position = uniform_ModelViewProjectionMatrix * in_Position;
+
+	vertNormal = normalize(uniform_NormalMatrix * in_Normal);  	
+    vertTexCoord = in_TexCoord;
+	vertPosition = (uniform_ModelViewMatrix * in_Position).xyz;
+}

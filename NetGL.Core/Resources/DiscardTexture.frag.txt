@@ -1,0 +1,22 @@
+#version 150 core 
+
+//NetGL-StandartUniforms
+
+in vec2 pass_TexCoord;
+
+uniform sampler2D uniform_MainTexture;
+uniform sampler2D uniform_DiscardTexture;
+uniform vec4 uniform_Color;
+uniform float uniform_DiscardFactor;
+
+out vec4 frag_Color;
+
+void main(void) {
+	vec3 rgbFactor = texture(uniform_DiscardTexture, pass_TexCoord).rgb * 0.333;
+	float factor = rgbFactor.r + rgbFactor.g + rgbFactor.b;
+	if(factor < uniform_DiscardFactor)
+		discard;
+
+	vec4 texColor = texture(uniform_MainTexture, pass_TexCoord);
+	frag_Color = uniform_Color * texColor;
+}

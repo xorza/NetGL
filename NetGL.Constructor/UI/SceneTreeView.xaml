@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="NetGL.Constructor.UI.SceneTreeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:infrastructure="clr-namespace:NetGL.Constructor.Infrastructure"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Styles.xaml" />
+    </UserControl.Resources>
+
+    <Grid>
+        <TreeView x:Name="treeView">
+            <TreeView.Resources>
+                <ContextMenu x:Key="SceneObjectContextMenu">
+                    <MenuItem Click="CreateChildSceneObjectMenuItem_Click">
+                        <MenuItem.Header>
+                            <TextBlock VerticalAlignment="Center" Text="Create child" />
+                        </MenuItem.Header>
+                    </MenuItem>
+                    <MenuItem Click="DeleteSceneObjectMenuItem_Click">
+                        <MenuItem.Header>
+                            <TextBlock VerticalAlignment="Center" Text="Delete" />
+                        </MenuItem.Header>
+                    </MenuItem>
+                </ContextMenu>
+            </TreeView.Resources>
+
+            <TreeView.ItemContainerStyle>
+                <Style BasedOn="{StaticResource TreeViewItem_WithHorizontalContentAlignment}" TargetType="TreeViewItem">
+                    <Setter Property="infrastructure:TreeViewItemBehavior.IsBroughtIntoViewWhenSelected" Value="True" />
+                    <Setter Property="Header" Value="{Binding Name, Mode=OneWay}" />
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                    <Setter Property="ItemsSource" Value="{Binding Children, Mode=OneWay}" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="ContextMenu" Value="{StaticResource SceneObjectContextMenu}" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+    </Grid>
+</UserControl>

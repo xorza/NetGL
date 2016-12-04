@@ -1,0 +1,11 @@
+#version 150 core 
+
+//NetGL-StandartUniforms
+
+uniform vec4 uniform_Color;
+
+out vec4 color;
+
+void main(void) {
+    color = uniform_Color;
+}

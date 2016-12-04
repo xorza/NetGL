@@ -1,0 +1,13 @@
+﻿#version 440 core 
+
+uniform sampler2D uniform_MainTexture;
+
+in vec4 color;
+in mat3 rotation;
+
+out vec4 frag_color;
+
+void main(void) {
+	vec3 texCoord = rotation * vec3(gl_PointCoord, 1);
+	frag_color = texture(uniform_MainTexture, texCoord.xy) * color;
+}

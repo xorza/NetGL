@@ -1,0 +1,227 @@
+﻿<UserControl x:Class="NetGL.Constructor.UI.ColorPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:NetGL.Constructor.UI.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Name="colorPickerControl"
+             MinWidth="350"
+             MinHeight="250"
+             SnapsToDevicePixels="True"
+             TextOptions.TextFormattingMode="Display"
+             TextOptions.TextRenderingMode="ClearType"
+             UseLayoutRounding="True"
+             d:DesignHeight="294"
+             d:DesignWidth="353"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UI/Styles.xaml" />
+                <ResourceDictionary Source="/UI/Converters.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <ImageBrush x:Key="CheckersBrush"
+                        ImageSource="../Resources/checker_256x256.PNG"
+                        Opacity="0.2"
+                        TileMode="Tile"
+                        Viewport="0,0,128,128"
+                        ViewportUnits="Absolute" />
+            <Style x:Key="PickedColorBorder" TargetType="Button">
+                <Setter Property="Margin" Value="2" />
+                <Setter Property="Width" Value="36" />
+                <Setter Property="Height" Value="36" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Background="{StaticResource CheckersBrush}"
+                                    BorderBrush="{StaticResource ControlBorder}"
+                                    BorderThickness="1">
+                                <Border HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                </Border>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="imageHostControl"
+              Margin="2"
+              Background="{x:Null}">
+
+            <Image x:Name="colorPickerImage"
+                   Margin="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Stretch="None" />
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border x:Name="saturationSliderBackground"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="2"
+                    HorizontalAlignment="Stretch"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="1"
+                    Padding="0">
+                <Slider x:Name="brightnessSlider"
+                        Margin="0"
+                        HorizontalAlignment="Right"
+                        LargeChange="0.1"
+                        Maximum="1"
+                        Minimum="0"
+                        Orientation="Vertical"
+                        SmallChange="0.01"
+                        Value="1" />
+            </Border>
+
+            <Border Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="2"
+                    HorizontalAlignment="Stretch"
+                    Background="{StaticResource CheckersBrush}"
+                    BorderBrush="{x:Null}"
+                    BorderThickness="1"
+                    Padding="0">
+                <Border x:Name="opacitySliderBackground"
+                        Margin="0"
+                        HorizontalAlignment="Stretch"
+                        BorderBrush="{x:Null}"
+                        BorderThickness="0">
+                    <Slider x:Name="opacitySlider"
+                            Margin="0"
+                            HorizontalAlignment="Right"
+                            LargeChange="0.1"
+                            Maximum="1"
+                            Minimum="0"
+                            Orientation="Vertical"
+                            SmallChange="0.01"
+                            Value="1" />
+                </Border>
+            </Border>
+        </Grid>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="2">
+            <Button x:Name="selectedColorBorder"
+                    Width="36"
+                    Height="36"
+                    HorizontalAlignment="Right"
+                    Style="{StaticResource PickedColorBorder}" />
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           Margin="2"
+                           VerticalAlignment="Center"
+                           Text="R:" />
+                <TextBox x:Name="rTextBox"
+                         Grid.Row="0"
+                         Grid.Column="1"
+                         Margin="2"
+                         VerticalAlignment="Center"
+                         MaxLength="3"
+                         Text="255" />
+
+                <TextBlock Grid.Row="1"
+                           Margin="2"
+                           VerticalAlignment="Center"
+                           Text="G:" />
+                <TextBox x:Name="gTextBox"
+                         Grid.Row="1"
+                         Grid.Column="1"
+                         Margin="2"
+                         VerticalAlignment="Center"
+                         MaxLength="3"
+                         Text="255" />
+
+                <TextBlock Grid.Row="2"
+                           Margin="2"
+                           VerticalAlignment="Center"
+                           Text="B:" />
+                <TextBox x:Name="bTextBox"
+                         Grid.Row="2"
+                         Grid.Column="1"
+                         Margin="2"
+                         VerticalAlignment="Center"
+                         MaxLength="3"
+                         Text="255" />
+
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Margin="2"
+                           VerticalAlignment="Center"
+                           Text="A:" />
+                <TextBox x:Name="aTextBox"
+                         Grid.Row="3"
+                         Grid.Column="1"
+                         Margin="2"
+                         VerticalAlignment="Center"
+                         MaxLength="3"
+                         Text="255" />
+            </Grid>
+        </StackPanel>
+
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="4"
+              Margin="2">
+            <ItemsControl x:Name="colorsItemsControl">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="Color">
+                        <Button Width="25"
+                                Height="25"
+                                Background="{Binding Path=.,
+                                                     Converter={StaticResource ResourceKey=ColorToSolidColorBrushValueConverter}}"
+                                Command="{Binding ElementName=colorPickerControl,
+                                                  Path=PredefinedColorSelected}"
+                                CommandParameter="{Binding}"
+                                Style="{StaticResource PickedColorBorder}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Grid>
+    </Grid>
+</UserControl>

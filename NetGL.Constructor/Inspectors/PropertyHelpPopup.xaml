@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="NetGL.Constructor.Inspectors.PropertyHelpPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/UI/AppResources.xaml" />
+    </UserControl.Resources>
+    <StackPanel Margin="0">
+        <TextBlock FontWeight="Bold" Text="{Binding Path=DisplayName, Mode=OneTime}" />
+
+        <TextBlock>
+            <Run FontStyle="Italic" Text="property: " />
+            <Run Text="{Binding Path=PropertyName, Mode=OneTime}" />
+        </TextBlock>
+        <TextBlock>
+            <Run FontStyle="Italic" Text="type: " />
+            <Run Text="{Binding Path=PropertyType, Mode=OneTime}" />
+        </TextBlock>
+        <TextBlock Text="{Binding Path=DetailedDescription}" Visibility="{Binding Path=DetailedDescription, Converter={StaticResource ResourceKey=NullToVisibilityConverter}}" />
+
+        <TextBlock FontStyle="Italic"
+                   Text="Loading..."
+                   Visibility="{Binding Path=IsLoading,
+                                        Converter={StaticResource ResourceKey=BooleanToVisibilityConverter}}" />
+
+        <Separator Margin="2 7 2 2" />
+
+        <StackPanel Margin="15 0 2 2"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+            <Image Width="16"
+                   Height="16"
+                   Margin="0"
+                   VerticalAlignment="Center"
+                   Source="/Resources/help_icon.png" />
+            <TextBlock Margin="1"
+                       VerticalAlignment="Center"
+                       Foreground="{StaticResource ResourceKey=DisabledForeground}">
+                <Hyperlink NavigateUri="{Binding Path=OnlineHelpURL, Mode=OneTime}" RequestNavigate="Hyperlink_RequestNavigate">Online help</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

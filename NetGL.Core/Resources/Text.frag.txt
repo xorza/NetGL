@@ -1,0 +1,17 @@
+#version 150 core
+
+//NetGL-StandartUniforms
+
+uniform vec4 uniform_Color;
+uniform sampler2D uniform_MainTexture;
+
+in vec2 pass_TexCoord;
+
+out vec4 color;
+
+void main(void) {
+	color.xyz = uniform_Color.xyz;
+	color.w = uniform_Color.w * texture(uniform_MainTexture, pass_TexCoord).w;
+	if(color.w <= 0.2)
+		discard;
+}

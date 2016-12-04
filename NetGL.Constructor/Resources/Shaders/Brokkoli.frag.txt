@@ -1,0 +1,6 @@
+﻿uniform vec4 uniform_Color = vec4(1.0);
+
+void getFragment(inout fragment_info fragment) {
+	fragment.emission = uniform_Color.xyz * frag_in.color.xyz;
+	fragment.albedo.w = uniform_Color.w * frag_in.color.w;
+}

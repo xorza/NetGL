@@ -1,0 +1,14 @@
+#version 150 core
+
+//NetGL-StandartUniforms
+
+in vec4 in_Position;
+
+uniform vec3 uniform_Size;
+uniform vec3 uniform_Center;
+
+void main(void) {
+	vec3 pos = uniform_Center + in_Position;
+	pos = pos * uniform_Size;
+	gl_Position = uniform_ModelViewProjectionMatrix * pos;
+}

@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <Color x:Key="SelectedItemColor">#9EDAFF</Color>
+    <Color x:Key="ForegroundColor">#333</Color>
+    <Color x:Key="WindowBackgroundColor">#E9E9E9</Color>
+    <Color x:Key="ControlBorderColor">#AAA</Color>
+
+    <LinearGradientBrush x:Key="SeparatorGradient">
+        <GradientStop Offset="0.0" Color="Transparent" />
+        <GradientStop Offset="0.35" Color="{StaticResource ResourceKey=ControlBorderColor}" />
+        <GradientStop Offset="0.65" Color="{StaticResource ResourceKey=ControlBorderColor}" />
+        <GradientStop Offset="1.0" Color="Transparent" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="SelectedItemBackgroundGradient">
+        <GradientStop Offset="0.0" Color="{StaticResource ResourceKey=SelectedItemColor}" />
+        <GradientStop Offset="1.0" Color="Transparent" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="FocusedInputBackgroundGradient">
+        <GradientStop Offset="0.0" Color="{StaticResource ResourceKey=SelectedItemColor}" />
+        <GradientStop Offset="0.35" Color="#F8F8F8" />
+        <GradientStop Offset="0.65" Color="#F8F8F8" />
+        <GradientStop Offset="1.0" Color="{StaticResource ResourceKey=SelectedItemColor}" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ScrollbarBackground" Color="#CCC" />
+    <SolidColorBrush x:Key="ScrollbarHoverBackground" Color="#AAA" />
+
+    <SolidColorBrush x:Key="TooltipBackground" Color="White" />
+    <SolidColorBrush x:Key="TooltipBorder" Color="Gray" />
+
+    <SolidColorBrush x:Key="WindowForeground" Color="{StaticResource ForegroundColor}" />
+    <SolidColorBrush x:Key="WindowBackground" Color="{StaticResource ResourceKey=WindowBackgroundColor}" />
+    <SolidColorBrush x:Key="DisabledForeground" Color="#555" />
+    <SolidColorBrush x:Key="ControlBorder" Color="{StaticResource ResourceKey=ControlBorderColor}" />
+    <SolidColorBrush x:Key="ContextMenuBackground" Color="#F7F7F7" />
+
+    <SolidColorBrush x:Key="CheckBoxCheckMarkColor" Color="#666" />
+
+    <SolidColorBrush x:Key="SelectedItemBackground" Color="{StaticResource SelectedItemColor}" />
+
+    <SolidColorBrush x:Key="ButtonBackground" Color="#F8F8F8" />
+    <SolidColorBrush x:Key="HoverButtonBorder" Color="#999" />
+    <SolidColorBrush x:Key="PressedButtonBackground" Color="#CCE6FF" />
+    <SolidColorBrush x:Key="DisabledButtonBackground" Color="#E0E0E0" />
+</ResourceDictionary>

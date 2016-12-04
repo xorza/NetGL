@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Deferred_1pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\deferred.1pass.glsl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Deferred_2pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\deferred.2pass.glsl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Forward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\forward.glsl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="Particles_comp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\particles.comp.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Particles_frag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\particles.frag.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Particles_vert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\particles.vert.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Quad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\quad.glsl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ReflectionDiffuseColorFragment" xml:space="preserve">
+    <value>uniform vec4 uniform_Color;
+uniform vec3 uniform_Emission;
+uniform float uniform_Reflectivity = 0.6;
+uniform samplerCube uniform_ReflectionTexture;
+
+in vec3 viewDir;
+in vec3 normalDir;
+
+fragment_info getFragment() {
+	vec3 normal = normalize(frag_in.normal);	
+	vec3 reflectedDirection = reflect(normalize(viewDir), normalize(normalDir));
+
+	fragment_info result;
+
+	result.emission = uniform_Reflectivity * texture(uniform_ReflectionTexture, reflectedDirection).xyz + uniform_Emission;
+	result.normal = normal;
+	result.albedo = uniform_Color;
+	result.specPower = uniform_SpecPower;
+	result.specIntensity = uniform_SpecIntensity;
+
+	return result;
+}</value>
+  </data>
+  <data name="RimDiffuseTextureColorFragment" xml:space="preserve">
+    <value>uniform vec4 uniform_Color;
+uniform sampler2D uniform_MainTexture;
+uniform vec3 uniform_Emission;
+uniform vec3 uniform_Rim  = vec3(0.6, 0.6, 0.8);
+uniform float uniform_RimPower = 4;
+
+fragment_info getFragment() {
+	vec3 normal = normalize(frag_in.normal);	
+	float rim = 1.0 - clamp(dot(-normalize(frag_in.view_dir), normal), 0, 1);
+
+	fragment_info result;
+
+	result.emission = uniform_Rim * pow (rim, uniform_RimPower) + uniform_Emission;
+	result.normal = normal;
+	result.albedo = uniform_Color * texture(uniform_MainTexture, frag_in.texcoord0);
+	result.specPower = uniform_SpecPower;
+	result.specIntensity = uniform_SpecIntensity;
+
+	return result;
+}</value>
+  </data>
+  <data name="RimReflectionDiffuseTextureColorFragment" xml:space="preserve">
+    <value>uniform vec4 uniform_Color = vec4(1.0);
+uniform sampler2D uniform_MainTexture;
+uniform vec3 uniform_Emission;
+
+uniform vec3 uniform_Rim = vec3(0.6, 0.6, 0.8);
+uniform float uniform_RimPower = 4;
+
+uniform float uniform_Reflectivity = 0.6;
+uniform samplerCube uniform_ReflectionTexture;
+
+in vec3 viewDir;
+in vec3 normalDir;
+
+fragment_info getFragment() {
+	vec3 normal = normalize(frag_in.normal);	
+	vec3 reflectedDirection = reflect(normalize(viewDir), normalize(normalDir));
+	float rim = 1.0 - clamp(dot(-normalize(frag_in.view_pos), normal), 0, 1);
+
+	fragment_info result;
+
+	result.emission = uniform_Reflectivity * texture(uniform_ReflectionTexture, reflectedDirection).xyz + uniform_Rim * pow (rim, uniform_RimPower) + uniform_Emission;
+	result.normal = normal;	
+	result.albedo = uniform_Color * texture(uniform_MainTexture, frag_in.texcoord0);
+	result.specPower = uniform_SpecPower;
+	result.specIntensity = uniform_SpecIntensity;
+
+	return result;
+}</value>
+  </data>
+  <data name="StandardShaders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\standardshaders.glsl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="UI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\ui.glsl;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="VertexReflection" xml:space="preserve">
+    <value>out vec3 viewDir;
+out vec3 normalDir;
+
+vertex_info getVertex() {
+	vertex_info result;
+
+	result.model_pos = in_Position;
+	result.normal = in_Normal;
+	result.tangent = in_Tangent;
+	result.albedo = in_Color.xyz;
+
+    viewDir = (uniform_ModelMatrix * vec4(in_Position, 1)).xyz - uniform_CameraPosition;
+    normalDir = (uniform_InversedModelMatrix * vec4(in_Normal, 0)).xyz;
+
+	return result;
+}</value>
+  </data>
+</root>

@@ -1,0 +1,13 @@
+#version 150 core
+
+//NetGL-StandartUniforms
+
+in vec3 in_Position;
+in vec2 in_TexCoord0;
+
+out vec2 pass_TexCoord;
+
+void main(void) {
+	gl_Position = uniform_ModelViewProjectionMatrix * vec4(in_Position, 1.0);
+	pass_TexCoord = in_TexCoord0;
+}

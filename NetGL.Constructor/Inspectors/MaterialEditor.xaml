@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="NetGL.Constructor.Inspectors.MaterialEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:infrastructure="clr-namespace:NetGL.Constructor.Infrastructure"
+             xmlns:inspectors="clr-namespace:NetGL.Constructor.Inspectors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ui="clr-namespace:NetGL.Constructor.UI"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/UI/AppResources.xaml" />
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Vertical">
+        <ItemsControl ItemsSource="{Binding Path=Textures, Mode=OneTime}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type infrastructure:TextureViewModel}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Name, Mode=OneTime}" />
+                        <ui:TexturePickerButton HorizontalAlignment="Left"
+                                                VerticalAlignment="Top"
+                                                Texture="{Binding Path=Texture,
+                                                                  Mode=TwoWay}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <ItemsControl ItemsSource="{Binding Path=Uniforms, Mode=OneTime}">
+            <ItemsControl.Resources>
+                <DataTemplate DataType="{x:Type infrastructure:Vector3UniformViewModel}">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=Name, Mode=OneTime}" />
+
+                        <inspectors:Vector3Editor HorizontalAlignment="Left"
+                                                  VerticalAlignment="Top"
+                                                  Vector="{Binding Path=Value,
+                                                                   Mode=TwoWay}" />
+                    </StackPanel>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type infrastructure:Vector4UniformViewModel}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Path=Name, Mode=OneTime}" />
+                        <ui:ColorPickerButton Grid.Column="1"
+                                              HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Color="{Binding Path=Value,
+                                                              Mode=TwoWay}" />
+                    </Grid>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type infrastructure:FloatUniformViewModel}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Path=Name, Mode=OneTime}" />
+                        <TextBox Grid.Column="1"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding Path=Value,
+                                                Mode=TwoWay}" />
+                    </Grid>
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type infrastructure:IntUniformViewModel}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Path=Name, Mode=OneTime}" />
+                        <TextBox Grid.Column="1"
+                                 HorizontalAlignment="Stretch"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding Path=Value,
+                                                Mode=TwoWay}" />
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.Resources>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

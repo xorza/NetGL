@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:NetGL.Constructor.UI.Converters"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    mc:Ignorable="d">
+
+    <converters:ColorToSolidColorBrushValueConverter x:Key="ColorToSolidColorBrushValueConverter" />
+    <converters:NullToBooleanConverter x:Key="NullToBooleanConverter" />
+    <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converters:VectorConverter x:Key="VectorConverter" />
+    <converters:VectorColorConverter x:Key="VectorColorConverter" />
+    <converters:Vector3ToVector4ColorConverter x:Key="Vector3ToVector4ColorConverter" />
+    <converters:Vector4ToVector3ColorConverter x:Key="Vector4ToVector3ColorConverter" />
+    <converters:BitmapToImageSourceConverter x:Key="BitmapToImageSourceConverter" />
+</ResourceDictionary>

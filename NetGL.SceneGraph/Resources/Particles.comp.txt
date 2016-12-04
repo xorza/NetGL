@@ -1,0 +1,34 @@
+﻿#version 440
+
+layout(std430, binding=0) buffer variableBuffer {
+	uint MaxParticles;
+	uint CurrentParticles;
+	float Time;
+	float DeltaTime;
+};
+layout(std430, binding=1) buffer positionBuffer {
+	vec3 position[];
+};
+layout(std430, binding=2) buffer colorBuffer {
+	vec4 color[];
+};
+layout(std430, binding=3) buffer data1Buffer {
+	vec4 data1[];
+};
+layout(std430, binding=4) buffer data2Buffer {
+	vec4 data2[];
+};
+layout(std430, binding=5) buffer data3Buffer {
+	vec4 data3[];
+};
+
+layout (local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+void main(){
+	uint i = gl_GlobalInvocationID.x;
+	
+	if(i >= CurrentParticles)
+        return;
+
+	data1[i].y = Time * 0.03f * i;
+	position[i] += normalize(position[i]) * DeltaTime * 0.05;
+}

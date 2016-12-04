@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{34880E4E-B6E4-47D5-A06B-AD6C77E57318}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetGL.Constructor</RootNamespace>
+    <AssemblyName>NetGL.Constructor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NetGL.Constructor.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\1419609200_132081.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug, GL_DEBUG|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug, GL_DEBUG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GL_DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug, GL_DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug, GL_DEBUG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GL_DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Resources\Shaders\Brokkoli.frag.txt" />
+    <Content Include="Resources\Textures\Earth\2_no_clouds_8k.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Earth\5_night_8k.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Earth\earth_normalmap_flat_8192x4096.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Earth\specular.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Wellbore\fluid_colors.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Cubemap\xneg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Cubemap\xpos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Cubemap\yneg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Cubemap\ypos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Cubemap\zneg.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\Cubemap\zpos.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.config" />
+    <Content Include="Resources\Shaders\Brokkoli.vert.txt" />
+    <Content Include="Resources\Data\population909500.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Meshes\interior.objx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetGL.Core\NetGL.Core.csproj">
+      <Project>{575971eb-b49a-40db-8ec9-452dae9bae25}</Project>
+      <Name>NetGL.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGL.SceneGraph\NetGL.SceneGraph.csproj">
+      <Project>{955af21a-19b5-4284-85cc-c610681c0743}</Project>
+      <Name>NetGL.SceneGraph</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Infrastructure\CameraViewModel.cs" />
+    <Compile Include="Infrastructure\Command.cs" />
+    <Compile Include="Infrastructure\ComponentViewModel.cs" />
+    <Compile Include="Infrastructure\FileDialogHelper.cs" />
+    <Compile Include="Infrastructure\MeshPreviewViewModel.cs" />
+    <Compile Include="Infrastructure\EventArgs.cs" />
+    <Compile Include="Helpers\Extenstions.cs" />
+    <Compile Include="Infrastructure\MaterialPreviewViewModel.cs" />
+    <Compile Include="Infrastructure\PropertyViewModels.cs" />
+    <Compile Include="Infrastructure\GenericInspectorViewModel.cs" />
+    <Compile Include="Infrastructure\IRefresh.cs" />
+    <Compile Include="Infrastructure\MaterialViewModel.cs" />
+    <Compile Include="Infrastructure\NotifyPropertyChange.cs" />
+    <Compile Include="Infrastructure\PropertyTooltipViewModel.cs" />
+    <Compile Include="Infrastructure\PropertyTooltipBehaviour.cs" />
+    <Compile Include="Infrastructure\TextureFactory.cs" />
+    <Compile Include="Components\TextureSelection\TextureViewModel.cs" />
+    <Compile Include="Infrastructure\UniformViewModels.cs" />
+    <Compile Include="Infrastructure\WeakCollection.cs" />
+    <Compile Include="Infrastructure\Win32Window.cs" />
+    <Compile Include="Infrastructure\WpfHelper.cs" />
+    <Compile Include="Inspectors\CameraInspector.xaml.cs">
+      <DependentUpon>CameraInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspectors\GenericInspector.xaml.cs">
+      <DependentUpon>GenericInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspectors\MaterialEditor.xaml.cs">
+      <DependentUpon>MaterialEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspectors\NumericEditor.xaml.cs">
+      <DependentUpon>NumericEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspectors\PropertyHelpPopup.xaml.cs">
+      <DependentUpon>PropertyHelpPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspectors\PropertyToolTip.xaml.cs">
+      <DependentUpon>PropertyToolTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspectors\Vector3Editor.xaml.cs">
+      <DependentUpon>Vector3Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <None Include="Resources\Shaders\Dance.cshader" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene\DiscardTester.cs" />
+    <Compile Include="Scene\EarthPopulation.cs" />
+    <Compile Include="Scene\SceneViewModel.cs" />
+    <Compile Include="Scene\TestComponent.cs" />
+    <Compile Include="Scene\TestObjectCreation.cs" />
+    <Compile Include="Scene\Tweener.cs" />
+    <Compile Include="Scene\Wellbore.cs" />
+    <Compile Include="Shaders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shaders.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BaseWindow.xaml.cs">
+      <DependentUpon>BaseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildWindow.cs" />
+    <Compile Include="UI\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ColorPickerButton.cs" />
+    <Compile Include="UI\ComponentsInspector.xaml.cs">
+      <DependentUpon>ComponentsInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Converters\BitmapToImageSourceConverter.cs" />
+    <Compile Include="UI\Converters\ColorToSolidColorBrushValueConverter.cs" />
+    <Compile Include="UI\Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="UI\Converters\NullToBooleanConverter.cs" />
+    <Compile Include="UI\Converters\NullToVisibilityConverter.cs" />
+    <Compile Include="UI\Converters\VectorColorConverter.cs" />
+    <Compile Include="UI\Converters\VectorConverter.cs" />
+    <Compile Include="UI\TexturePickerButton.xaml.cs">
+      <DependentUpon>TexturePickerButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TextureSelection\TexturePreviewSelector.xaml.cs">
+      <DependentUpon>TexturePreviewSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MeshPreviewSelector.xaml.cs">
+      <DependentUpon>MeshPreviewSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MaterialPreviewSelector.xaml.cs">
+      <DependentUpon>MaterialPreviewSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BitmapPickerButton.cs" />
+    <Compile Include="UI\ErrorControl.xaml.cs">
+      <DependentUpon>ErrorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\AssemblyViewModel.cs" />
+    <Compile Include="Infrastructure\SceneObjectTreeViewModel.cs" />
+    <Compile Include="Infrastructure\TreeViewItemBehavior.cs" />
+    <Compile Include="Infrastructure\TypeViewModel.cs" />
+    <Compile Include="UI\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegularPopup.xaml.cs">
+      <DependentUpon>RegularPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SceneTreeView.xaml.cs">
+      <DependentUpon>SceneTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Inspectors\TransformInspector.xaml.cs">
+      <DependentUpon>TransformInspector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TypeBrowser.xaml.cs">
+      <DependentUpon>TypeBrowser.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Inspectors\CameraInspector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspectors\GenericInspector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspectors\MaterialEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspectors\NumericEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspectors\PropertyHelpPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspectors\PropertyToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspectors\Vector3Editor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\BaseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ComponentsInspector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\AppResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\TexturePickerButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\TextureSelection\TexturePreviewSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\MeshPreviewSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\ErrorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MaterialPreviewSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\RegularPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SceneTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Inspectors\TransformInspector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Styles\ContextMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\ColorPickerButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\ListBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\BitmapPickerButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Separator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Tooltip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\ToggleButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Popup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\GridSplitter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Slider.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\ScrollBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\TextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\StatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Empty.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Dimensions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\MenuItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Styles\TreeViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TypeBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shaders.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shaders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Libraries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\checker_256x256.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1419609200_132081.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1419609347_132046.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1419609542_maximize_window.png" />
+    <Resource Include="Resources\1419609572_close_window.png" />
+    <Resource Include="Resources\1419609575_minimize_window.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1419612472_17-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1419612596_18-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Textures\star.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Resources\ControlPanel\rotation_gizmo.png" />
+    <Resource Include="Resources\ControlPanel\translation_gizmo.png" />
+    <Resource Include="Resources\help_icon.png" />
+    <Content Include="Resources\Textures\1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\explosion.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Textures\green.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

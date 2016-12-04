@@ -1,0 +1,21 @@
+﻿#version 440 core
+
+//NetGL-StandartUniforms
+
+in vec4 in_Position;
+in vec4 in_Color;
+in vec4 in_Data1;
+
+out vec4 color;
+out mat3 rotation;
+
+void main(void) {
+	gl_Position = uniform_ModelViewProjectionMatrix * in_Position;
+	gl_PointSize = in_Data1.x / gl_Position.w;
+	color = in_Color;
+	color.a = color.a * clamp(gl_PointSize, 0, 1);
+
+	float sin = sin(in_Data1.y);
+	float cos = cos(in_Data1.y);
+	rotation = mat3(cos, -sin, 0.0, sin, cos, 0.0, (1.0 - cos - sin) * 0.5, (1.0 + sin - cos) * 0.5, 1.0);
+}

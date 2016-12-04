@@ -1,0 +1,15 @@
+#version 150 core 
+
+//NetGL-StandartUniforms
+
+in vec2 pass_TexCoord;
+
+uniform sampler2D uniform_MainTexture;
+uniform vec4 uniform_Color;
+
+out vec4 frag_Color;
+
+void main(void) {
+	vec4 texColor = texture(uniform_MainTexture, pass_TexCoord);
+	frag_Color = uniform_Color * texColor;
+}

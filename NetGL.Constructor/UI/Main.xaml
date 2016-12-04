@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="NetGL.Constructor.UI.Main"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:NetGL.Constructor.UI.Converters"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:inspectors="clr-namespace:NetGL.Constructor.Inspectors"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:scenegraph="clr-namespace:NetGL.SceneGraph.Control;assembly=NetGL.SceneGraph"
+             xmlns:ui="clr-namespace:NetGL.Constructor.UI"
+             Margin="0"
+             Padding="0"
+             SnapsToDevicePixels="True"
+             TextOptions.TextFormattingMode="Display"
+             TextOptions.TextRenderingMode="Auto"
+             UseLayoutRounding="True"
+             d:DesignHeight="500"
+             d:DesignWidth="500"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UI/Styles.xaml" />
+                <ResourceDictionary Source="/UI/Converters.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="340" MinWidth="150" />
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition Width="*" MinWidth="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0"
+              Grid.ColumnSpan="3"
+              Margin="0"
+              Padding="0">
+            <MenuItem Header="File">
+                <MenuItem Click="TakeScreenshotButton_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center" Text="Screeenshot" />
+                    </MenuItem.Header>
+                </MenuItem>
+
+                <MenuItem Click="SaveButton_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center" Text="Save" />
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Click="LoadButton_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center" Text="Load" />
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Click="ClearButton_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center" Text="Clear" />
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Click="CloseButton_Click">
+                    <MenuItem.Header>
+                        <TextBlock VerticalAlignment="Center" Text="Exit" />
+                    </MenuItem.Header>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Assets">
+                <MenuItem Click="ShowMaterialSelector_Click"
+                          Header="Materials"
+                          Visibility="Collapsed" />
+                <MenuItem Click="ShowMeshSelector_Click" Header="Meshes" />
+                <MenuItem Click="ShowTextureSelector_Click"
+                          Header="Textures"
+                          Visibility="Collapsed" />
+            </MenuItem>
+            <MenuItem Click="PerformFullGC_Click" Header="Full GC" />
+        </Menu>
+
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="3"
+              Margin="0"
+              Visibility="Collapsed">
+            <ui:ControlPanel />
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0.7*" />
+            </Grid.RowDefinitions>
+
+            <Button Grid.Row="0"
+                    Width="150"
+                    Margin="2"
+                    HorizontalAlignment="Left"
+                    Command="{Binding Path=AddNewSceneObjectCommand}"
+                    Content="Add scene object" />
+
+            <ui:SceneTreeView x:Name="sceneTreeView"
+                              Grid.Row="1"
+                              Scene="{Binding Path=Scene}"
+                              SelectedSceneObject="{Binding Path=SelectedSceneObject,
+                                                            Mode=TwoWay}" />
+
+            <GridSplitter Grid.Row="2"
+                          ResizeBehavior="PreviousAndNext"
+                          ResizeDirection="Rows" />
+
+            <ScrollViewer Grid.Row="3"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="Top"
+                          HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto">
+                <StackPanel HorizontalAlignment="Stretch"
+                            IsEnabled="{Binding Path=SelectedSceneObject,
+                                                Converter={StaticResource ResourceKey=NullToBooleanConverter}}"
+                            Orientation="Vertical">
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBox x:Name="sceneObjectNameTextBox"
+                                 Grid.Column="0"
+                                 Margin="2"
+                                 VerticalAlignment="Center"
+                                 Text="{Binding Path=SelectedSceneObject.Name}" />
+                        <Button Grid.Column="1"
+                                Click="RemoveSOButton_Click"
+                                Style="{StaticResource DenySymbolButton}" />
+                    </Grid>
+                    <Button Width="150"
+                            Margin="2"
+                            HorizontalAlignment="Left"
+                            Click="AddComponentButton_Click"
+                            Content="Add component" />
+                    <inspectors:TransformInspector x:Name="transformInspector"
+                                                   HorizontalAlignment="Stretch"
+                                                   Transform="{Binding Path=SelectedSceneObject.Transform}" />
+                    <ui:ComponentsInspector x:Name="componentsInspector"
+                                            HorizontalAlignment="Stretch"
+                                            SceneObject="{Binding Path=SelectedSceneObject}" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <GridSplitter Grid.Row="2"
+                      Grid.Column="1"
+                      ResizeBehavior="PreviousAndNext"
+                      ResizeDirection="Columns" />
+        <scenegraph:WpfHost x:Name="WpfHost"
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="0 0 0 0" />
+
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="3">
+            <StatusBarItem>
+                <TextBlock x:Name="statusTextBlock" Text="" />
+            </StatusBarItem>
+        </StatusBar>
+
+    </Grid>
+</UserControl>

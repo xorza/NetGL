@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{575971EB-B49A-40DB-8EC9-452DAE9BAE25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetGL.Core</RootNamespace>
+    <AssemblyName>NetGL.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug, GL_DEBUG|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug, GL_DEBUG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GL_DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug, GL_DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug, GL_DEBUG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GL_DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GLContext.cs" />
+    <Compile Include="ContextMissingException.cs" />
+    <Compile Include="GLException.cs" />
+    <Compile Include="Helpers\BinaryIOExtensions.cs" />
+    <Compile Include="Infrastructure\DirectStateAccessAttribute.cs" />
+    <Compile Include="Mathematics\IVector4.cs" />
+    <Compile Include="Mathematics\Spline.cs" />
+    <Compile Include="Mathematics\UIVector4.cs" />
+    <Compile Include="Meshes\CircularExtrusion.cs" />
+    <Compile Include="Meshes\MeshBuilder.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="GLExtensions.cs" />
+    <Compile Include="Helpers\BitmapHelper.cs" />
+    <Compile Include="Helpers\Reference.cs" />
+    <Compile Include="Infrastructure\DebugLogger.cs" />
+    <Compile Include="Infrastructure\Disposer.cs" />
+    <Compile Include="Infrastructure\FileLogger.cs" />
+    <Compile Include="Infrastructure\ILogger.cs" />
+    <Compile Include="Infrastructure\Log.cs" />
+    <Compile Include="Infrastructure\LogEntry.cs" />
+    <Compile Include="Infrastructure\LogEntryType.cs" />
+    <Compile Include="Mathematics\BoundingVolume.cs" />
+    <Compile Include="Mathematics\Box.cs" />
+    <Compile Include="Mathematics\Cylinder.cs" />
+    <Compile Include="Mathematics\EasingFunctions.cs" />
+    <Compile Include="Mathematics\FractalNoise.cs" />
+    <Compile Include="Mathematics\Frustum.cs" />
+    <Compile Include="Mathematics\MathF.cs" />
+    <Compile Include="Mathematics\Matrix.cs" />
+    <Compile Include="Mathematics\PerlinNoise.cs" />
+    <Compile Include="Mathematics\Plane.cs" />
+    <Compile Include="Mathematics\Quaternion.cs" />
+    <Compile Include="Mathematics\RandomF.cs" />
+    <Compile Include="Mathematics\Ray.cs" />
+    <Compile Include="Mathematics\RaycastHit.cs" />
+    <Compile Include="Mathematics\SimplexNoise.cs" />
+    <Compile Include="Mathematics\Sphere.cs" />
+    <Compile Include="Mathematics\Triangle.cs" />
+    <Compile Include="Mathematics\Vector2.cs" />
+    <Compile Include="Mathematics\Vector3.cs" />
+    <Compile Include="Mathematics\Vector4.cs" />
+    <Compile Include="Meshes\Ellipse.cs" />
+    <Compile Include="Meshes\CompoundMesh.cs" />
+    <Compile Include="Meshes\Cone.cs" />
+    <Compile Include="Meshes\Sphere.cs" />
+    <Compile Include="Shaders\Shaders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Shaders.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Text\FontRenderer.cs" />
+    <Compile Include="Types\BufferObject.cs" />
+    <Compile Include="Types\ResourceReference.cs" />
+    <Compile Include="Types\ResourceTracker.cs" />
+    <Compile Include="Types\ShaderProgram.cs" />
+    <Compile Include="Types\Framebuffer.cs" />
+    <Compile Include="Types\GLVersion.cs" />
+    <Compile Include="Types\IHaveSize.cs" />
+    <Compile Include="Types\PixelFormatDescriptor.cs" />
+    <Compile Include="Types\RenderBuffer.cs" />
+    <Compile Include="Types\Shader.cs" />
+    <Compile Include="Types\StandardUniformsBufferObject.cs" />
+    <Compile Include="Types\Texture.cs" />
+    <Compile Include="Types\Texture2.cs" />
+    <Compile Include="Types\FloatBuffer.cs" />
+    <Compile Include="Types\TextureCubemap.cs" />
+    <Compile Include="Types\UInt32Buffer.cs" />
+    <Compile Include="Types\UIntObject.cs" />
+    <Compile Include="Types\Uniform.cs" />
+    <Compile Include="Types\UniformAttribute.cs" />
+    <Compile Include="Types\UnsafeBuffer.cs" />
+    <Compile Include="Types\Vector4Buffer.cs" />
+    <Compile Include="Types\VertexArrayObject.cs" />
+    <Compile Include="Helpers\Assert.cs" />
+    <Compile Include="Helpers\AssertException.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Meshes\Box.cs" />
+    <Compile Include="Meshes\Cloud.cs" />
+    <Compile Include="Meshes\Grid.cs" />
+    <Compile Include="Meshes\Icosahedron.cs" />
+    <Compile Include="Meshes\Plane.cs" />
+    <Compile Include="Meshes\Torus.cs" />
+    <Compile Include="Meshes\TrefoilKnot.cs" />
+    <Compile Include="Meshes\Tube.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\AttributeBuffer.cs" />
+    <Compile Include="Types\ByteBuffer.cs" />
+    <Compile Include="Types\Light.cs" />
+    <Compile Include="Types\GlobalUniformsBufferObject.cs" />
+    <Compile Include="Types\Mesh.cs" />
+    <Compile Include="Types\UInt16Buffer.cs" />
+    <Compile Include="Types\Vector2Buffer.cs" />
+    <Compile Include="Types\Vector3Buffer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoundingVolume.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiffuseTexture.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diffuse.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Color.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Color.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Texture.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiffuseColor.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Texture.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shadow.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiffuseNormalTexture.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiffuseNormal.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OpenGLReference\glcorearb.h" />
+    <None Include="OpenGLReference\glext.h" />
+    <None Include="OpenGLReference\wglext.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VertexColor.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiscardTexture.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiffuseShadow.vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DiffuseShadowColor.frag.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shaders\Shaders.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Shaders.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OpenGLReference\GL4.txt" />
+    <Content Include="OpenGLReference\GL4Enums.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

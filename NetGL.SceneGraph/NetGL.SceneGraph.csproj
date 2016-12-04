@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{955AF21A-19B5-4284-85CC-C610681C0743}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetGL.SceneGraph</RootNamespace>
+    <AssemblyName>NetGL.SceneGraph</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug, GL_DEBUG|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug, GL_DEBUG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GL_DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug, GL_DEBUG|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug, GL_DEBUG\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;GL_DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Colliders\CylinderCollider.cs" />
+    <Compile Include="Colliders\BoxCollider.cs" />
+    <Compile Include="Colliders\Collider.cs" />
+    <Compile Include="Colliders\RaycastColliderHit.cs" />
+    <Compile Include="Colliders\SphereCollider.cs" />
+    <Compile Include="Components\BoundingBox.cs" />
+    <Compile Include="Components\CameraManipulator.cs" />
+    <Compile Include="Components\ColorAttribute.cs" />
+    <Compile Include="Components\DisplayAttribute.cs" />
+    <Compile Include="Components\Material.cs" />
+    <Compile Include="Components\MouseDrag.cs" />
+    <Compile Include="Components\MouseRayDrawer.cs" />
+    <Compile Include="Components\NumberRangeAttribute.cs" />
+    <Compile Include="Components\ObjectSelector.cs" />
+    <Compile Include="Components\ParticlesRenderable.cs" />
+    <Compile Include="Components\Renderable.cs" />
+    <Compile Include="Components\RotationGizmo.cs" />
+    <Compile Include="Components\Rotator.cs" />
+    <Compile Include="Components\ScaleGizmo.cs" />
+    <Compile Include="Components\Shaker.cs" />
+    <Compile Include="Components\TextureUniform.cs" />
+    <Compile Include="Components\TranslationGizmo.cs" />
+    <Compile Include="Control\INetGLControl.cs" />
+    <Compile Include="Control\PinvokeRenderTimer.cs" />
+    <Compile Include="Control\RenderTimer.cs" />
+    <Compile Include="Import\FbxImporter.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="OpenGL\DeferredRender.cs" />
+    <Compile Include="OpenGL\ForwardRender.cs" />
+    <Compile Include="OpenGL\IRenderTechnique.cs" />
+    <Compile Include="OpenGL\MeshRenderer.cs" />
+    <Compile Include="OpenGL\MeshVaoCollection.cs" />
+    <Compile Include="OpenGL\OpenGLShader.cs" />
+    <Compile Include="OpenGL\ParticleRenderer.cs" />
+    <Compile Include="OpenGL\PreviewRenderer.cs" />
+    <Compile Include="OpenGL\Graphics.cs" />
+    <Compile Include="Control\RenderDispatcher.cs" />
+    <Compile Include="Control\WpfHost.cs" />
+    <Compile Include="OpenGL\UIRender.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scene\IRenderer.cs" />
+    <Compile Include="Scene\RealTime.cs" />
+    <Compile Include="Scene\RendererCollection.cs" />
+    <Compile Include="Import\ObjImporter.cs" />
+    <Compile Include="Colliders\Raycaster.cs" />
+    <Compile Include="Colliders\RaycastMeshRendererHit.cs" />
+    <Compile Include="Control\NetGLControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Components\Camera.cs" />
+    <Compile Include="Scene\Component.cs" />
+    <Compile Include="Components\LightSource.cs" />
+    <Compile Include="Components\IUpdatable.cs" />
+    <Compile Include="Scene\Layer.cs" />
+    <Compile Include="Serialization\Asset.cs" />
+    <Compile Include="Serialization\AssetID.cs" />
+    <Compile Include="Serialization\DeserializationContext.cs" />
+    <Compile Include="Serialization\MeshAsset.cs" />
+    <Compile Include="Serialization\SceneDTO.cs" />
+    <Compile Include="Serialization\SerializationContext.cs" />
+    <Compile Include="Components\MeshRenderable.cs" />
+    <Compile Include="Scene\SceneRoot.cs" />
+    <Compile Include="Scene\SceneObject.cs" />
+    <Compile Include="Scene\SceneTime.cs" />
+    <Compile Include="Scene\Transform.cs" />
+    <Compile Include="Serialization\ComponentDTO.cs" />
+    <Compile Include="Serialization\NotSerializedAttribute.cs" />
+    <Compile Include="Serialization\MaterialAsset.cs" />
+    <Compile Include="Serialization\Texture2Asset.cs" />
+    <Compile Include="Serialization\Vector2DTO.cs" />
+    <Compile Include="Serialization\QuaternionDTO.cs" />
+    <Compile Include="Serialization\SceneObjectDTO.cs" />
+    <Compile Include="Serialization\Vector4DTO.cs" />
+    <Compile Include="Serialization\Vector3DTO.cs" />
+    <Compile Include="Shaders\QuadShader.cs" />
+    <Compile Include="Tweens\RotationTween.cs" />
+    <Compile Include="Tweens\FloatTween.cs" />
+    <Compile Include="Tweens\ITween.cs" />
+    <Compile Include="Tweens\PositionTween.cs" />
+    <Compile Include="Tweens\ShakeTween.cs" />
+    <Compile Include="Tweens\TweenBase.cs" />
+    <Compile Include="Tweens\TweenCollection.cs" />
+    <Compile Include="Shaders\UIShader.cs" />
+    <Compile Include="UI\UserControl.cs" />
+    <Compile Include="UI\UserPanel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deferred.2pass.glsl" />
+    <None Include="Resources\Deferred.1pass.glsl" />
+    <None Include="Resources\StandardShaders.glsl" />
+    <None Include="Resources\Forward.glsl" />
+    <Content Include="FbxConverter.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Particles.comp.txt" />
+    <Content Include="Resources\Particles.frag.txt" />
+    <Content Include="Resources\Particles.vert.txt" />
+    <None Include="Resources\Quad.glsl" />
+    <None Include="Resources\UI.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FbxImportTypes\FbxConverterTypes.csproj">
+      <Project>{b390c2fe-4541-4841-9729-028cff920b0c}</Project>
+      <Name>FbxConverterTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGL.Core\NetGL.Core.csproj">
+      <Project>{575971eb-b49a-40db-8ec9-452dae9bae25}</Project>
+      <Name>NetGL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Mathematics\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>copy /Y "$(SolutionDir)Lib\FbxConverter.dll" "$(TargetDir)FbxConverter.dll"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

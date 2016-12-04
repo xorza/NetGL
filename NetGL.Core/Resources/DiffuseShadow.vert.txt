@@ -1,0 +1,26 @@
+#version 150 core
+
+//NetGL-GlobalUniforms
+//NetGL-StandartUniforms
+
+#define SHADOW_BIAS 0.001
+
+in vec4 in_Position;
+in vec3 in_Normal;
+in vec2 in_TexCoord;
+
+out vec3 vertPosition;
+out vec3 vertNormal;
+out vec2 vertTexCoord;
+out vec3 shadowCoord;
+
+void main() {
+	gl_Position = uniform_ModelViewProjectionMatrix * in_Position;
+
+	vertNormal = normalize(uniform_NormalMatrix * in_Normal);  	
+    vertTexCoord = in_TexCoord;
+	vertPosition = (uniform_ModelViewMatrix * in_Position).xyz;	
+
+	if(uniform_LightCastingShadowNumber != -1)
+		shadowCoord = (uniform_ShadowMatrix * in_Position).xyz * 0.5 + vec3(0.5, 0.5, 0.5 - SHADOW_BIAS);
+}

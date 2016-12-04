@@ -1,0 +1,9 @@
+#version 150 core
+
+//NetGL-StandartUniforms
+
+in vec4 in_Position;
+
+void main(void) {
+	gl_Position = uniform_ModelViewProjectionMatrix * in_Position;
+}

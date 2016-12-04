@@ -1,0 +1,48 @@
+#version 150 core
+
+//NetGL-GlobalUniforms
+//NetGL-StandartUniforms
+
+in vec4 in_Position;
+in vec3 in_Normal;
+in vec3 in_Tangent;
+in vec2 in_TexCoord;
+
+out vec2 vertTexCoord;
+out vec3 vertPosition;
+out vec3 eyeVec;
+out vec3 lightVec[MAX_LIGHTS];
+
+void main() {
+	gl_Position = uniform_ModelViewProjectionMatrix * in_Position;
+    vertTexCoord = in_TexCoord;
+
+	vec3 n = normalize(uniform_NormalMatrix * in_Normal);
+	vec3 t = normalize(uniform_NormalMatrix * in_Tangent);
+	vec3 b = cross(n, t);	
+ 
+	vertPosition = (uniform_ModelViewMatrix * in_Position).xyz;	
+	
+	eyeVec.x = dot(vertPosition, t);
+	eyeVec.y = dot(vertPosition, b);
+	eyeVec.z = dot(vertPosition, n);
+	eyeVec = normalize(eyeVec);
+
+	for(int i = 0; i < uniform_LightCount; ++i)
+	{		
+		Light light = uniform_Light[i];
+		vec3 lightDir = vec3(0);
+
+		if(light.Type == 0)		
+			lightDir = light.Direction;
+		if(light.Type == 1)
+			lightDir = light.Position - vertPosition;
+		
+		vec3 lv;
+		lv.x = dot(lightDir, t);
+		lv.y = dot(lightDir, b);
+		lv.z = dot(lightDir, n);
+		
+		lightVec[i] = lv;
+	}
+}
