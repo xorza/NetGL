@@ -1,4 +1,4 @@
-[NetGL blog](http://netgl.blogspot.com/)
+
 
 NetGL is an open-source .NET 3D visualization engine for your WPF and Windows Forms applications based on OpenGL.
 
