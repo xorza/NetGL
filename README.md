@@ -48,8 +48,4 @@ You can see some more demos:
 
 
 
-**NetGL is now in active development (early BETA), not yet published anywhere, but if you interested you can contact me @ [xxorza@gmail.com](xxorza@gmail.com).
-**
-
-
-**Readme is in development...**
+**NetGL is now abandoned for many years :(**
